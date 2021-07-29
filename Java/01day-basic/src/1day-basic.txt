@@ -1,0 +1,45 @@
+**1일차 주요 목차**
+
+<전체 과정 커리큘럼 소개>
+
+	- Java SE (1개월) 
+	- Database(Oracle) JDBC 2주
+	- Web 기초(HTML,CSS,JavaScript 기초)
+	- Java Web Programming (총 4주)
+	- Ajax, jQuery (JavaScript 심화)
+	- DB Modeling, OOAD(객체지향분석&설계)
+	- Design Pattern(Singleton, Template Method, MVC, Front Controller 등)
+	- 소프트웨어 개발방법론 - 애자일
+	- 형상관리 (git)
+	- Semi Project (총 3주) -> final project를 위한 프로젝트
+	- Framework(총 4주) -> Spring (IOC, DI, DL, AOP, MVC, Maven, jUnit, Log4, REST,
+						  SpringBoot, Security, MSA(Spring Cloud)는 특강, 
+						  MyBatis, Tiles Framework)
+	- Final Project (총 4주)
+
+Java SE(총 4주) <세부 커리큘럼소개>
+	- Java 기본소개
+	- 환경설정
+	- 객체지향 (Object Oriented) - 캡슐화
+	- 자바기본문법 (변수, 메서드, 생성자)
+	- 데이터 타입, 객체
+	- UML - 객체(or 클래스) 관계
+	- 변수 범위
+	- 배열
+	- 상속
+	- 다형성
+	- String/ StringBuilder/ StringBuffer
+	- Exception Handling
+	- IO(File IO, Object Serialization)
+	- Thread (기본 개념, Multi Threading, syncronized)
+	- Network
+	- 수업진행중 mini Project 할 예정
+
+
+**2일차 주요 목차(내일 할 수업 목차)**
+	- Java SE 개발 환경설정
+	- Java 기본 소개
+	- Java 기본 프로그램 작성 및 실행
+	- 객체 지향 개념
+	- Java 기본 문법(클래스 ,객체, 변수, 메서드, 생성자)
+	
