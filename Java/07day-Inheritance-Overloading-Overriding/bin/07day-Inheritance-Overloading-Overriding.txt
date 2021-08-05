@@ -1,0 +1,80 @@
+**7일차 주요 목차**
+- Array
+- Overloading
+- Inheritance
+	is a relationship
+	extends
+	super
+	overriding
+- Polymorphism
+
+--------------------------
+
+-Array 배열 : 다수의 데이터를 효과적으로 관리하기 위한 객체
+ 참조형 데이터를 저장하는 배열
+ how?
+ 1.배열 선언 Person[] p; //p는 배열 객체를 잠조하는 변수, 데이터 타입은 Person[] 배열 타입
+ 2.배열 생성 p = new Person[3]; //length3 배열을 생성
+ 3.배열 요소에 정보를 할당 p[0] = new Person("아이유",30);
+ 
+ 123배열 선언 생성 할당을 동시에
+ Person[]p = {new Person("아이유",30),ew Person("이강인",20)}; //2개 요소를 저장한 배열 생성
+ 
+ //DAO = Data Access Object
+ //Service : 비즈니스 로직을 정의한 클래스(Object)
+ //vo = ValueObject
+ 
+ 
+- Overloading : 동일한 이름으로 다양한 매개변수를 정의 
+			->  인터페이스를 간결하게 하여 사용자 편의성 증대( ex) java seAPI : System.out.println 메서드 )
+	1) 메서드 오버로딩
+		ex) public void eat(){}
+			public void eat(String menu){}
+	2) 생성자 오버로딩
+		ex) public Person(){}
+			public Person(String name){}
+			
+ **Inheritance**
+ 객체지향 주요 개념 : Encapsulation, Inheritance, Polymorphism
+ 
+ 	Inheritance(상속) : 부모(super class) 변수(인스턴스 변수,메서드)를 물려받아 자식(sub class)이 재사용
+ 					계층 구조 형성을 통한 다형성(Polymorphism) 적용 환경 -> 이후 공부예정
+ 					
+ 	is a relationship : 사람은 동물이다. 매니저는 사원이다. UML의 Class Diagram 에서는 generalization 으로 is a 관계를 표현한다
+ 	
+	extends : 상속받을 때 사용하는 자바 키워드
+			  자식 클래스(sub class) extends 부모 클래스(super class)
+			  
+	protected Access Modifier : 패키지 내에서 접근가능, 단 상속관계에서는 다른 패키지에서도 접근 가능
+	참고) public > protected > default > private		  
+	
+	super : 부모를 가르키는 자바 키워드(예약어)
+		1) super.멤버 (변수 및 메서드) -> 부모의 멤버에 접근
+		2) super() -> 부모 생성자를 호출해서 부모 객체를 생성
+		   super() 는 생성자 첫 라인에 위치, 부모 생성자를 호출하여 부모 객체를 생성하게 한다
+		   만약 명시하지 않으면 자동으로 삽입
+		   자식 객체 생성하면 부모 객체가 함께 생성되어 메모리에 적재되고 이를 사용하게 될 수 있는 원리는
+		   생성자에 super() 가 적용되기 때문이다.
+			
+		   자식 객체를 생성하면 자식 객체의 생성자 첫라인에 배치되는 super()에 의해
+		   부모 -> 자식 순으로 객체가 생성된다.
+		   
+
+----------------------------------------------------------------------------------------
+
+**8일차 주요 목차**
+	
+	review
+	single inheritance
+	
+	Overriding
+	java.lang.Object
+	Polymorphism(다형성)
+	Object Casting
+	
+ 
+ 
+ 
+ 
+ 
+ 
