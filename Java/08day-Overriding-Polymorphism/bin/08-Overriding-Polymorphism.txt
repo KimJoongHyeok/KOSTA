@@ -1,0 +1,80 @@
+**8일차 주요 목차**
+	
+	review
+	single inheritance
+	
+	Overriding
+	java.lang.Object
+	Polymorphism(다형성)
+
+	
+-----------------------------------------
+
+	
+ **Inheritance**
+ 객체지향 주요 개념 : Encapsulation, Inheritance, Polymorphism
+ 
+ 	Inheritance(상속) : 부모(super class) 변수(인스턴스 변수,메서드)를 물려받아 자식(sub class)이 재사용
+ 					계층 구조 형성을 통한 다형성(Polymorphism) 적용 환경 -> 이후 공부예정
+ 					
+ 	is a relationship : 사람은 동물이다. 매니저는 사원이다. UML의 Class Diagram 에서는 generalization 으로 is a 관계를 표현한다
+ 	
+	extends : 상속받을 때 사용하는 자바 키워드
+			  자식 클래스(sub class) extends 부모 클래스(super class)
+			  
+	protected Access Modifier : 패키지 내에서 접근가능, 단 상속관계에서는 다른 패키지에서도 접근 가능
+	참고) public > protected > default > private		  
+	
+	super : 부모를 가르키는 자바 키워드(예약어)
+		1) super.멤버 (변수 및 메서드) -> 부모의 멤버에 접근
+		2) super() -> 부모 생성자를 호출해서 부모 객체를 생성
+		   super() 는 생성자 첫 라인에 위치, 부모 생성자를 호출하여 부모 객체를 생성하게 한다
+		   만약 명시하지 않으면 자동으로 삽입
+		   자식 객체 생성하면 부모 객체가 함께 생성되어 메모리에 적재되고 이를 사용하게 될 수 있는 원리는
+		   생성자에 super() 가 적용되기 때문이다.
+			
+		   자식 객체를 생성하면 자식 객체의 생성자 첫라인에 배치되는 super()에 의해
+		   부모 -> 자식 순으로 객체가 생성된다.
+		   
+	single inheritance
+	자바는 단일 상속을 채택
+	자바 인터페이스도 다중 상속의 장점을 가진다.
+		->이후 공부 예정 : 자바 인터페이스를 이용하면 다중상속의 장점인
+						다양한 계층 구조 형성을 통한 다형성(Polymorphism)을 적용할 수 있다.
+		   
+	- Overriding
+	메서드 오버라이딩 : 부모 메서드를 자신에 맞게 재정의 	   
+		   		   상속받은 부모 클래스의 메서드를 자식 객체에 알맞게 구현부를 업데이트해서 사용하게 하는 것
+	오버라이딩 문법 : 접근제어자는 하위(자식)클래스의 메서드에서 더 좁아지면 안된다
+		   		  리턴타입,메서드명,매개변수리스트는 동일해야 한다
+		   		  이후 공부예정  , 상위(부모)메서드에서 선언한 Exception 또는 그 하위 Exception만 throws 가능하다. 
+		   		 
+	//메서드 오버라이딩
+		//오버라이딩할떄 접근제어자가 자식에서 좁아지면 안됨 but 부모가 protected 에서 자식이 public 은가능
+		
+	-java.lang.Object
+	모든 자바 클래스의 최상위 클래스, 모든 자바 객체는 부모로써 Object 를 가지게 된다.
+	Class Object is the root of the class hierarchy. Every class has Object as a superclass.
+	
+	java.lang.Object에 있는 모든 기능을 자바 클래스(or java Object)는 상속받게 된다.
+	필요시 Object 에 있는 메서드를 오버라이딩해서 사용하기도 한다.
+
+	-Polymorphism(다형성)
+	객체지향 주요 개념 : Encapsulation, Inheritance, Polymorphism
+	
+	하나의 메시지 방식으로 다양한 객체들이 각아의 방식으로 동작하게 하는 성질
+	One Interface, Multiple Implements
+	하나의 객체가 다양한 타입의 변수로 참조되는 성질
+	
+	다형성 적용을 위해서는 계층구조(hierarchy) 형성이 필요하다.
+	
+	자식 객체는 부모 타입의 변수로 참조 될 수 있다.
+	ex) Animal a = new Person(); //가능
+		Object o = new Person(); //가능
+
+		   
+		   
+		   
+		   
+		   
+		   
