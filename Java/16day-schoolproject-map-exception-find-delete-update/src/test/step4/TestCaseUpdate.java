@@ -16,7 +16,7 @@ public class TestCaseUpdate {
 		} catch (DuplicateTelException de) { // 기존에 tel이 존재하면
 			System.out.println(de.getMessage()); // 011 tel 중복되어 등록불가합니다.
 		}
-
+		
 		try {
 			service.addMember(new Teacher("016", "RM", "강남", "수학"));
 			System.out.println("등록 ok");
