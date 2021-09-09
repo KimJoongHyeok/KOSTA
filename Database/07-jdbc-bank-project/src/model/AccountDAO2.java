@@ -142,5 +142,65 @@ public class AccountDAO2 {
 			closeAll(pstmt,con);
 		}
 	}
+	
+	public boolean existsAccountNo(String accountNo) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		boolean flag = false;
+		try {
+			con = getConnection();
+			String sql = "select count(*) from account where account_no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, accountNo);
+			rs = pstmt.executeQuery();
+			if (rs.next() && rs.getInt(1) == 1)
+				flag = true;
+		} finally {
+			closeAll(rs, pstmt, con);
+		}
+		return flag;
+	}
+	
+	public void transfer(String senderAccountNo, String password, int money, String receiverAccountNo) throws SQLException, AccountNotFoundException, NotMatchedPasswordException, InsufficientBlanceException, NotMoneyException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		int senederbalance = findBalanceByAccountNo(senderAccountNo, password);
+		checkAccountNoAndPassword(senderAccountNo, password);
+		
+		if(existsAccountNo(receiverAccountNo)==false) {
+			throw new AccountNotFoundException("이체받을 계좌가 존재하지 않습니다.");
+		} 
+		if(money <= 0) {
+			throw new NotMoneyException("이체액은 0원을 초과해야 합니다.");
+		}
+		if(senederbalance < money) {
+			throw new InsufficientBlanceException("잔액 부족으로 이체할 수 없습니다.");
+		}
+		try {
+			con = getConnection();
+			con.setAutoCommit(false);
+			String sql = "update account set balance = balance - ? where account_no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, money);
+			pstmt.setString(2, senderAccountNo);
+			pstmt.executeUpdate();
+			pstmt.close();
+			
+			String sql2 = "update account set balance = balance + ? where account_no = ?";
+			pstmt = con.prepareStatement(sql2);
+			pstmt.setInt(1, money);
+			pstmt.setString(2, receiverAccountNo);
+			pstmt.executeUpdate();
+			con.commit();
+		} catch(Exception e) {
+			con.rollback();
+			throw e;
+		}
+		finally {
+			closeAll(pstmt,con);
+		}
+	}
 
 }
