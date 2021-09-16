@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step12-checkbox</title>
+<script type="text/javascript">
+	function testCheckbox() {
+		let info = "";
+		let m = document.getElementsByName("movie");
+		//for loop
+		for (let i = 0; i < m.length; i++) {
+			if(m[i].checked){
+				info += m[i].value + " ";
+			}
+		}
+		//if
+		if(info == ""){
+			alert("영화를 선택하세요");
+		}else{
+			alert(info + "선택하셨습니다.")
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- 영화 선택ㅇㄹ 하나이상 하지않으면 영화를 선택하세요
+	 영화 선택했으면 선택환 영화들의 정보를 하나의 alert으로 
+	 캐리비안의 해적 타운 선택하셨습니다.
+ -->
+	<form>
+		<input type="checkbox" name="movie" value="아바웃타임">어바웃타임<br>
+		<input type="checkbox" name="movie" value="캐리비안의 해적">캐리비안의 해적<br>
+		<input type="checkbox" name="movie" value="타운">타운<br> <input
+			type="button" value="선택" onclick="testCheckbox()">
+	</form>
+</body>
+</html>
