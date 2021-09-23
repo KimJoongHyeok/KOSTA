@@ -1,0 +1,93 @@
+**servlet 기본 개념**
+
+HTTP : HyperText Transfer Protocol
+WAS : Web Application Server
+	  WebServer + Web Container
+	  WebServer -> HTTP 에 의거해 HTML을 서비스하는 서버
+	  WebContainer -> Servlet/JSP 실행환경을 제공
+	  
+WAS제품중 Apache Tomcat을 사용한다
+
+
+
+Was 환경 설정
+0.WAS 설치
+1.apache-tomcat/conf/server.xml 에서 port 변경 (이유는 오라클 포트와 중복 방지를 위해)
+2.한글처리(get방식) - URIEncoding - "utf-8"설정 추가
+3.자동리로드 : apache-tomcat/conf/context.xml 에서 reloadable = "true" 설정 추가
+  			Java class( Servlet 포함해서 )변경시 자동 리로딩하게 해서 개발 편의성 증대
+  			
+Servlet : Java Web Programming 기술
+		  java class로 표현
+		  Model2 Architecture (MVC) 에서 Controller 역할을 한다
+		  (Spring Framework 의 웹기술 SprintMVC 의 FrontController 인 DispatcherServler 도 서블릿이다 )
+
+JSP : Java Server Page
+	  동적인 웹페이지 생성을 위한 기술
+	  HTML 구조 상에서 JSP tag(java code) 를 삽입 -> View 를 구현하는 측면에서 장점
+	  Model2 Architecture(MVC) 에서 View의 역할을 한다
+	  
+참고) MVC Design Pattern
+	 Model : 비즈니스 로직과 데이터 엑세스 로직을 담당
+	 		 Java Beans( or Java Component ) : Service,DAO,DTO,VO ...
+	 View : 클라이언트에게 동적인 화면을 제공 : JSP
+	 Controller : 제어자의 역할, 클라이언트의 요청을 분석, 그에 대한 Model 연동후
+	 			  적절한 View를 선택해 응답하게 하는 역할
+	 
+	 JSP 는 Servlet이다 -> JSP 는 Web Container에 의해 java class로 생성되어 컴파일, 실행되고
+	 					 이 java class 는 Servlet Interface의 하위, HttpServlet class의 자식이다			  
+	  
+
+****************************************************************************************
+webstudy06-servlet-basic
+
+Deployment Descriptor ( DD ) : WEB-INF/web.xml	-> 웹 어플리케이션의 설정 정보를 기술 
+배포		   기술서				   WAS는 웹어플리케이션 실행 첫 시점에 DD(web.xml) 정보를 로드하여
+							   웹 서비스에 반영한다.
+
+web.xml 의 서블릿 설정 부분
+<servlet>
+  	<servlet-name>basic</servlet-name>  <!-- 서블릿 별칭 -->
+  	<servlet-class>step1.BasicServlet</servlet-class> <! -- 패키지명.클래스명 -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>basic</servlet-name> <!-- 위 서블릿을 지칭 -->
+  	<url-pattern>/bs</url-pattern> <!-- 클라이언트가 해당 서블릿을 실행시켜 서비스 받기 위한 url -->
+  </servlet-mapping>	  
+	  
+
+Http Request Method ( 요청 방식 )
+1. get 방식 : 정보 조회용 , url 상에 전송 정보가 노출됨 , 전송 데이터 용량에 제한
+2. post 방식 : 정보 전달용( 주로 서버 자원의 데이터 변경시 사용 ), url 상에 전송 정보가 노출되지 않고
+			  http request body 부분에 저장되어 전송(별도의 한글 처리가 필요) , 전송 데이터 용량 제한 x
+3.
+
+- client ( html form )과 server ( servlet ) 연동
+	
+	client													server
+	<form action = "url pattern" method = "get">			
+	<input type = "text" name = "food">						url pattern 에 해당하는 서블릿의 doGet메서드가 실행
+	<input type = "submit" value = "주문">					클라이언트가 보낸 정보를 입력받기 위해 
+	</form>													request.getParameter(name) 즉 request.getParameter("food") 와 같이 입력받는다
+	
+	submit 을 누르면 아래와 같은 형식으로 전송된다.
+	http://localhost:8888/webstudy06-servlet-basic/url-pattern?name=value&name=value
+	
+	
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	
