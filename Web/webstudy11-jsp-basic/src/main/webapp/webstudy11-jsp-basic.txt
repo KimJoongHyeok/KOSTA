@@ -305,9 +305,23 @@ JSP 기본 문법
 5) directive 지시자  <%@  %> jsp 문서정보를 웹컨테이너에 전달 ex) 한글처리방식, 문서타입, import, errorPage 등을 기술
 
 
+
+JSP LifeCycle - Servlet 과 동일( 차이점은 jsp 를 이용해 .java를 생성하고 .class 로 컴파일해서 실행 : tomcat/work 디렉토리에 생성 )
+
+
+								WAS( Web Container )
+								
+client browser --request -->    is loaded? --- no ---> .jsp를 이용해 .java 로 생성하고 .class로 컴파일 후 class loading
+									|					 |	
+									|					 |
+									| yes				객체 생성
+									|				 	 |
+									|					init() -- jspInit()
+									|					 |
+									| ---------------> service() -- jspService()
 	  
 	  
-	  
+	  							 destroy() -- jspDestroy() --> WAS 종료직전에 호출
 	  
 	  
 	  
