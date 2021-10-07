@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.container{
+	padding-top: 15px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+a{
+	text-decoration: none;  /* 태그링크 밑줄 없애고 싶을때 구현 */
+	color : #ff9966;
+}
+a:hover{ /* 링크에 마우스 올려놧을때 변하는 색깔 */
+	text-decoration:none;
+	color : #99ccff;
+}
+table{
+	border-collapse : collapse;
+}
+table,td,th{
+	border: 1px solid black;
+}
+td,th{
+	padding : 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
