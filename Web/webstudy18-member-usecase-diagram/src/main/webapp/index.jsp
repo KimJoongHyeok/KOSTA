@@ -19,7 +19,7 @@
 <br>
 <hr>
 <%
-	MemberVO vo = (MemberVO)request.getAttribute("mvo");
+	MemberVO vo = (MemberVO)session.getAttribute("mvo");
 	if(vo == null){
 %>
 <h3>로그인</h3>
