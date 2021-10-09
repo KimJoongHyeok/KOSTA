@@ -100,10 +100,9 @@ public class MemberDAO {
 	public void updateMember(MemberVO vo) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		try {
 			con = DriverManager.getConnection(url, username, userpass);
-			String sql = "update member set password = ? , name = ?, address = ? where id = ?;";
+			String sql = "update member set password = ?, name = ?, address = ? where id = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getPassword());
 			pstmt.setString(2, vo.getName());
@@ -111,7 +110,7 @@ public class MemberDAO {
 			pstmt.setString(4, vo.getId());
 			pstmt.executeUpdate();
 		}finally {
-			
+			closeAll(pstmt, con);
 		}
 	}
 	public void registerMember(MemberVO vo) throws SQLException {
@@ -119,14 +118,13 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		try {
 			con = DriverManager.getConnection(url, username, userpass);
-			String sql = "insert into member values(?,?,?,?)";
+			String sql = "insert into member(id,password,name,address) values(?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPassword());
 			pstmt.setString(3, vo.getName());
 			pstmt.setString(4, vo.getAddress());
 			pstmt.executeUpdate();
-			
 		}
 		finally {
 			closeAll(pstmt, con);

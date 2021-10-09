@@ -19,8 +19,8 @@
 <br>
 <hr>
 <%
-	MemberVO vo = (MemberVO)session.getAttribute("mvo");
-	if(vo == null){
+	MemberVO mvo = (MemberVO)session.getAttribute("mvo");
+	if(mvo == null){
 %>
 <h3>로그인</h3>
 <form action = "LoginServlet" method = "post">
@@ -37,15 +37,22 @@
 	}else{
 %>
 <h3>로그인 성공</h3>
-<%= vo.getName() %>님 반갑습니다.
+<%= mvo.getName() %>님 반갑습니다.
 <br><br>
-<form action = "LogoutServlet">
-	<button>로그아웃</button>
-</form>
+<%-- a href 링크는 기본적으로 get 요청방식이다
+로그인, 로그아웃은 post 방식이 적합나다
+(get 방식은 사용자가 브라우저 url상에서 주소를 기입해서 실행해도 동작이 되기 떄문) --%>
+<script type="text/javascript">
+	function logout(){
+		document.getElementById("logoutForm").submit();
+	}
+</script>
+<form action = "LogoutServlet" method = "post" id = "logoutForm"></form>
+<a href = "#" onclick = "logout()">로그아웃</a>
+
 <br>
-<form action = "update-form.jsp">
-	<button>회원정보수정</button>
-</form>
+<a href = "update-form.jsp" >회원정보수정</a>
+
 <br>
 <hr>
 <h3>주소로 회원정보 검색하기</h3>
@@ -56,7 +63,6 @@
 <%
 }
 %>
-
 </div>
 </body>
 </html>
