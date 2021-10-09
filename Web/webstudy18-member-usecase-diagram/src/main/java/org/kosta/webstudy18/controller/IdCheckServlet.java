@@ -24,7 +24,6 @@ public class IdCheckServlet extends HttpServlet {
 		String path = "";
 		try {
 			boolean flag = MemberDAO.getInstance().idCheck(request.getParameter("memberId"));
-			
 			if(flag == true) {
 				path = "id-check-fail.jsp";
 			}else {
