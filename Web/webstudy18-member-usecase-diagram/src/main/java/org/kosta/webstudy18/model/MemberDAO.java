@@ -78,7 +78,6 @@ public class MemberDAO {
 	}
 	
 	public ArrayList<MemberVO> findMemberListByAddress(String address) throws SQLException {
-		MemberVO vo = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -135,7 +134,7 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		boolean flag = false;
-		//true 면 아이디 있는거 false 면 아이디 없는거
+		//true 아이디 존재 false 면 아이디 없는거
 		try {
 			con = DriverManager.getConnection(url, username, userpass);
 			String sql = "select * from member where id = ?";

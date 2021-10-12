@@ -15,7 +15,6 @@
 		<%
 		ArrayList<MemberVO> list = (ArrayList<MemberVO>) request.getAttribute("addresslist");
 		%>
-
 		<h3><%=request.getParameter("address")%>에 사는 회원 리스트
 		</h3>
 		<table>

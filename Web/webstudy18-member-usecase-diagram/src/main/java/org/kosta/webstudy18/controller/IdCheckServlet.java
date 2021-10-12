@@ -23,14 +23,15 @@ public class IdCheckServlet extends HttpServlet {
 		//true 면 아이디 있는거 false 면 아이디 없는거
 		String path = "";
 		try {
-			boolean flag = MemberDAO.getInstance().idCheck(request.getParameter("memberId"));
+			String id = request.getParameter("id");
+			boolean flag = MemberDAO.getInstance().idCheck(id);
 			if(flag == true) {
 				path = "id-check-fail.jsp";
 			}else {
 				path = "id-check-ok.jsp";
 			}
+			request.setAttribute("id", id);
 			request.getRequestDispatcher(path).forward(request, response);
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
