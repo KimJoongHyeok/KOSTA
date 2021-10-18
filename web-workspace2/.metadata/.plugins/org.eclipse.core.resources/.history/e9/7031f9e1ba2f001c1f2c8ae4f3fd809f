@@ -1,0 +1,12 @@
+package test;
+
+public class TestString {
+	public static void main(String[] args) {
+		String uri = "/webstudy22-front-do-unit-test/FindController.do";
+		//위 url에서 context path인 /webstudy22-front-do-unit-test와 .do를 제외한 문자열을 추출
+		String contextPath = "/webstudy22-front-do-unit-test";
+		System.out.println(contextPath.length());
+		System.out.println(uri.substring(contextPath.length()+1)); //FindController.do
+		System.out.println(uri.substring(contextPath.length()+1,uri.length()));
+	}
+}

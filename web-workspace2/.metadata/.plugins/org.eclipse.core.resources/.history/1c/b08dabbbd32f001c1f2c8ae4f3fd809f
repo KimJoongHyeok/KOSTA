@@ -1,0 +1,13 @@
+package org.kosta.controller;
+
+public class HandlerMapping {
+	private static HandlerMapping instance = new HandlerMapping();
+	private HandlerMapping() {}
+	public HandlerMapping getInstance() {
+		return instance;
+	}
+	public static Controller create(String command) {
+		Controller controller = null;
+		return controller;
+	}
+}

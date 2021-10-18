@@ -1,0 +1,9 @@
+package org.kosta.webstudy23.model;
+
+public class ProductDAO {
+	private static ProductDAO instance =  new ProductDAO();
+	private ProductDAO() {}
+	public static ProductDAO getInstance() {
+		return instance;
+	}
+}

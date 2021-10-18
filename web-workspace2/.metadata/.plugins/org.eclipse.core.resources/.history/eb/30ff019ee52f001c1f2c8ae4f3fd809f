@@ -1,0 +1,13 @@
+package org.kosta.webstudy23.model;
+
+public class ProductDAO {
+	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	private String username = "scott";
+	private String password = "tiger";
+	private static ProductDAO instance =  new ProductDAO();
+	private ProductDAO() {}
+	public static ProductDAO getInstance() {
+		return instance;
+	}
+	
+}

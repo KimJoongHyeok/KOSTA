@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+C:\kosta224\web-workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3575337347.index
+\webstudy22-front-controller-pattern-step6\src\main\java
+C:\kosta224\web-workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3900998927.index
+\webstudy21-front-controller-pattern-review\src\main\java
+C:\kosta224\web-workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4259500991.index
+\webstudy20-front-controller-pattern-step5\src\main\java
+C:\kosta224\web-workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2774851197.index
+\ webstudy22-front-do-unit-test\src\main\java
+C:\kosta224\web-workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2719871611.index
+\webstudy22-front-controller-pattern-review\src\main\java
+C:\kosta224\web-workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\136249540.index
+\webstudy23-date\src\main\java
+C:\kosta224\web-workspace2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2927134779.index
+\webstudy20-front-controller-pattern-step6\src\main\java

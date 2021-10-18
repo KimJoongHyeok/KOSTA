@@ -1,0 +1,9 @@
+package org.kosta.controller;
+
+public class HandlerMapping {
+	private static HandlerMapping instance = new HandlerMapping();
+	private HandlerMapping() {}
+	public HandlerMapping getInstance() {
+		return instance;
+	}
+}

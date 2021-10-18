@@ -1,0 +1,21 @@
+/*
+ * MVC + Front Controller 상에서 date 형을 이용해 프로그래밍 연습을 위한 테이블
+ */
+
+create table mvc_product(
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

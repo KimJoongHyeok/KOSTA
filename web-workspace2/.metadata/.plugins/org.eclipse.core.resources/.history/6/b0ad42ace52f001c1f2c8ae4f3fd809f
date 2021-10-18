@@ -1,0 +1,21 @@
+package org.kosta.webstudy23.model;
+
+import java.net.ConnectException;
+import java.sql.PreparedStatement;
+
+public class ProductDAO {
+	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	private String username = "scott";
+	private String password = "tiger";
+	private static ProductDAO instance =  new ProductDAO();
+	private ProductDAO() {}
+	public static ProductDAO getInstance() {
+		return instance;
+	}
+	public void closeAll(PreparedStatement pstmt,ConnectException con) {
+		if(pstmt!=null)
+			pstmt.close();
+		if(con!=null)
+			con.close();
+	}
+}

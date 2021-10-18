@@ -1,0 +1,13 @@
+package org.kosta.webstudy23.model;
+
+public class ProductVO {
+	private int id;
+	private String name;
+	private String maker;
+	private int price;
+	private String regDate;
+	public ProductVO() {
+		super();
+	}
+	
+}

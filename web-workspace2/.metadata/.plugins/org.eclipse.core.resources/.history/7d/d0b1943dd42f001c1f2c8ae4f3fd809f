@@ -1,0 +1,16 @@
+package org.kosta.webstudy23.controller;
+
+public class HandlerMapping {
+	private static HandlerMapping instance = new HandlerMapping();
+	private HandlerMapping() {}
+	public static HandlerMapping getInstance() {
+		return instance;
+	}
+	public Controller create(String command) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		Controller controller = null;
+		String classInfo = this.getClass().getPackage().getName();
+		Class.forName(classInfo + "." + command).newInstance();
+		
+		return controller;
+	}
+}

@@ -1,0 +1,28 @@
+package test;
+
+class Solution {
+    public int[] solution(int[] weights, String[] head2head) {
+        int[] answer = {};
+        int fight_count = weights.length;
+        
+        for(int i = 0;i<fight_count;i++){
+            int win_count = 0;
+            for(int j = 0;i<fight_count;j++){
+                if(head2head[i].equals("W"))
+                    win_count++;
+            }
+            answer[i] = fight_count - 1 / win_count;
+        }
+        return answer;
+    }
+}
+
+public class Test1 {
+	public static void main(String[] args) {
+		Solution s = new Solution();
+		int [] weights = {50,82,75,120};
+		String[] head2head = {"NLWL","WNLL","LWNW","WWLN"};
+		s.solution(weights, head2head);
+	}
+}
+
