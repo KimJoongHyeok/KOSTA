@@ -9,6 +9,14 @@ public class ProductVO {
 	public ProductVO() {
 		super();
 	}
+	
+	public ProductVO(String name, String maker, String regDate) {
+		super();
+		this.name = name;
+		this.maker = maker;
+		this.regDate = regDate;
+	}
+
 	public ProductVO(String name, String maker, int price) {
 		super();
 		this.name = name;
@@ -23,6 +31,14 @@ public class ProductVO {
 		this.price = price;
 		this.regDate = regDate;
 	}
+	public ProductVO(int id, String name, String maker, String regDate) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.maker = maker;
+		this.regDate = regDate;
+	}
+
 	public int getId() {
 		return id;
 	}

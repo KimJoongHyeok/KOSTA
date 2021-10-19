@@ -25,7 +25,7 @@ public class FrontControllerServlet extends HttpServlet {
 			Controller controller = HandlerMapping.getInstance().create(command);
 			String path = controller.execute(request, response);
 			if(path.startsWith("redirect:")) {
-				response.sendRedirect(path);
+				response.sendRedirect(path.substring(9));
 			}else {
 				request.getRequestDispatcher(path).forward(request, response);
 			}
