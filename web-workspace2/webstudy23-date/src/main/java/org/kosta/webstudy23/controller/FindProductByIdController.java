@@ -8,7 +8,7 @@ import org.kosta.webstudy23.model.ProductVO;
 
 public class FindProductByIdController implements Controller {
 
-	@Override
+
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String productId = request.getParameter("productId");
 		ProductVO vo = ProductDAO.getInstance().findProductId(productId);

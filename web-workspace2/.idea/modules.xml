@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/00-db-sql/00-db-sql.iml" filepath="$PROJECT_DIR$/00-db-sql/00-db-sql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Servers/Servers.iml" filepath="$PROJECT_DIR$/Servers/Servers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webstudy20-front-controller-pattern-step5/webstudy20-front-controller-pattern-step5.iml" filepath="$PROJECT_DIR$/webstudy20-front-controller-pattern-step5/webstudy20-front-controller-pattern-step5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webstudy21-front-controller-pattern-review/webstudy21-front-controller-pattern-review.iml" filepath="$PROJECT_DIR$/webstudy21-front-controller-pattern-review/webstudy21-front-controller-pattern-review.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webstudy22-front-controller-pattern-step6/webstudy22-front-controller-pattern-step6.iml" filepath="$PROJECT_DIR$/webstudy22-front-controller-pattern-step6/webstudy22-front-controller-pattern-step6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webstudy22-front-do-unit-test/webstudy22-front-do-unit-test.iml" filepath="$PROJECT_DIR$/webstudy22-front-do-unit-test/webstudy22-front-do-unit-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webstudy23-date/webstudy23-date.iml" filepath="$PROJECT_DIR$/webstudy23-date/webstudy23-date.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webstudy24-DBCP/webstudy24-DBCP.iml" filepath="$PROJECT_DIR$/webstudy24-DBCP/webstudy24-DBCP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webstudy25-EL/webstudy25-EL.iml" filepath="$PROJECT_DIR$/webstudy25-EL/webstudy25-EL.iml" />
+    </modules>
+  </component>
+</project>
