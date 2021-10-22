@@ -1,46 +1,97 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Home</title>
+	<meta charset="UTF-8">
+	<title>회원관리</title>
 </head>
 <body>
+	<h3>회원관리( MVC , FrontController , DBCP, EL, JSTL )</h3>
+	<hr>
+	<%--
+			index.jsp -- FrontControllerServlet --HandlerMapping-- FindMemberByIdController -- MemberDAO -- DataSourceManager -- DB 
+								|
+								findbyid-ok.jsp
+								or
+								findbyid-fail.jsp
+ --%>
 	<h3>회원검색</h3>
 	<form action="FindMemberByIdController.do">
 		<input type="text" name="id" placeholder="아이디" required="required">
 		<button>검색</button>
 	</form>
+	<%--
+ 		index.jsp -- FrontControllerServlet -- HandlerMapping -- LoginController -- MemberDAO -- DataSourceManager -- DB  		
+  							|
+  							| redirect
+  							login 성공 :  index.jsp 
+  							login 실패 : login-fail.jsp   
+  --%>
 	<hr>
+	<h3>로그인</h3>
 	<c:choose>
-		<c:when test="${sessionScope.mvo==null }">
-			<h3>로그인</h3>
+		<c:when test="${sessionScope.mvo==null}">
 			<form action="LoginController.do" method="post">
-				<input type="text" name="id" placeholder="아이디" required="required">
-				<br> <input type="password" name="password" placeholder="비밀번호"
-					required="required"> <br>
-				<button>로그인</button>
+				<input type="text" name="id" placeholder="아이디" required="required"><br>
+				<input type="password" name="password" placeholder="패스워드"
+					required="required"><br>
+				<button type="submit">로그인</button>
 			</form>
+
+			<br>
+			<hr>
+			<h3>회원가입</h3>
+			<a href="register-member.jsp">회원가입</a>
 		</c:when>
 		<c:otherwise>
-			<h3>로그인성공</h3>
-			${sessionScope.mvo.name}님 환영합니다
-			<form action = "LogoutController.do">
-				<button>로그아웃</button>
-			</form>
+ 		${sessionScope.mvo.name} 님 로그인 상태 <br>
 			<br>
-			<h3>주소로 회원검색하기</h3>
-			<form action = "FindAddressController.do">
-				<input type = "text" name = "address" placeholder="주소" required="required">
+			<a href="LogoutController.do">로그아웃</a>
+			<br>
+			<br>
+			<form action="FindMemberListByAddressController.do">
+				<input type="text" name="address" placeholder="주소"
+					required="required">
 				<button>검색</button>
 			</form>
 			<br>
 			<br>
-			<a href = "update-member.jsp">회원정보수정</a>
+			<%--
+ 			 
+ 			 index.jsp -- update-member.jsp 				------------FrontControllerServlet -- HandlerMapping--UpdateMemberController-- MemberDAO -- DataSourceManager--DB
+ 			 				아이디 readonly 옵션으로 수정 안되게 한다				| 
+ 			 				패스워드, 이름 , 주소 , 								  update-result.jsp
+ 			 				생년월일(type: date ) 은 수정되도록 한다 					 																					
+ 		 --%>
+
+			<a href="update-member.jsp">회원정보수정</a>
 		</c:otherwise>
 	</c:choose>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
