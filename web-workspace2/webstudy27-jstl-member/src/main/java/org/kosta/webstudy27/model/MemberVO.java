@@ -1,43 +1,39 @@
 package org.kosta.webstudy27.model;
 
-public class MemberVO {
+import java.io.Serializable;
+
+public class MemberVO implements Serializable{
+	private static final long serialVersionUID = -488918202303853613L;
 	private String id;
+	private String password;
 	private String name;
 	private String address;
-	private String birth;
+	private String birthday;
 	private String regdate;
 	public MemberVO() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-	public MemberVO(String id, String name, String birth) {
+	public MemberVO(String id, String password, String name, String address, String birthday, String regdate) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.birth = birth;
-	}
-
-	public MemberVO(String id, String name, String address, String birth, String regdate) {
-		super();
-		this.id = id;
+		this.password = password;
 		this.name = name;
 		this.address = address;
-		this.birth = birth;
+		this.birthday = birthday;
 		this.regdate = regdate;
-	}
-	
-	public MemberVO(String id, String name, String address, String birth) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.address = address;
-		this.birth = birth;
 	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getName() {
 		return name;
@@ -51,11 +47,11 @@ public class MemberVO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getBirth() {
-		return birth;
+	public String getBirthday() {
+		return birthday;
 	}
-	public void setBirth(String birth) {
-		this.birth = birth;
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
 	}
 	public String getRegdate() {
 		return regdate;
@@ -63,7 +59,10 @@ public class MemberVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-
-	
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", address=" + address
+				+ ", birthday=" + birthday + ", regdate=" + regdate + "]";
+	}
 	
 }
