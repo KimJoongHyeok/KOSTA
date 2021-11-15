@@ -1,0 +1,15 @@
+package test;
+
+import model.Spade;
+/**
+ * 
+ * 
+ *
+ */
+public class TestUser {
+	public static void main(String[] args) {
+		//Hammer tool = new Hammer();
+		Spade tool = new Spade();
+		tool.work();
+	}
+}

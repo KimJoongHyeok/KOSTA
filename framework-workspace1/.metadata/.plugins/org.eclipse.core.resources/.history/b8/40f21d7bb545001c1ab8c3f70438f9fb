@@ -1,0 +1,37 @@
+**Framework**
+
+주요목차
+- Spring IOC/DI
+- Spring AOP
+- MyBatis Framework
+- SpringMVC ( Spring Legacy project )
+- Ajax / JQuery / JSON / REST
+- SpringBoot
+- Thymeleaf
+- Spring Cloud( MSA ), RestTemplate, JPA
+
+----------------------------------------------
+
+- 개념정리
+높은 응집도(high cohesion)		낮은 결합도(loose coupling)
+"모듈 간의 결합도는 최소화하고 모듈 내 요소들 간의 응집도를 최대화"
+응집도 : 자신의 역할에 집중하는 정도
+		모듈 내의 기능 수행을 위해 요소간에 얼마만큼 연관된 책임이 집중되어 있는지를 나타내는 정도
+결합도 : 모듈 간의 상호 의존 정도
+
+- 객체지향 ( Object - Oriented )
+시스템 분석 설계 기법
+객체를 독립적인 기본단위로 채택하고, 객체와 객체의 관게를 중심으로 분석,설계하는 기법
+
+- Class : Object 의 설계도
+- Object : 속성과 기능으로 구성, 시스템의 기본 단위
+- package : 클래스들을 분류
+- library : 라이브러리, 재사용 가능한 프로그램들의 모음( jar : 자바 프로그램 압축 파일 확장자 )
+
+
+
+
+
+
+
+

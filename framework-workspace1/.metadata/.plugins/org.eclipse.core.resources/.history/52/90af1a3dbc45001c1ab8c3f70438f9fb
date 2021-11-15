@@ -1,0 +1,7 @@
+package model;
+
+public class Hammer {
+	public void work() {
+		
+	}
+}

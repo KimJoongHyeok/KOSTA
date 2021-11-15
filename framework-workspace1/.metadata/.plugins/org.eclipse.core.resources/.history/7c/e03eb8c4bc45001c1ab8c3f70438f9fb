@@ -1,0 +1,11 @@
+package test;
+
+import model.Hammer;
+
+public class TestUser {
+	public static void main(String[] args) {
+		//Hammer tool = new Hammer();
+		
+		tool.work();
+	}
+}
