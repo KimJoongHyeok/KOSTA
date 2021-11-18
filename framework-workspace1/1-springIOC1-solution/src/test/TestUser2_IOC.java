@@ -2,7 +2,6 @@ package test;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import model.Spade;
 import model.Tool;
 /**
  * 기존 제어 방식
