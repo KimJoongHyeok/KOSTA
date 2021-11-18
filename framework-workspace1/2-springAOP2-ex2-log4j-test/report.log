@@ -1,0 +1,6 @@
+2021-11-18 15:39:43,446 DEBUG [main] org.kosta.model.service.ProductService (ProductService.java:15) - deleteProduct
+2021-11-18 15:39:43,447 INFO  [main] org.kosta.model.service.ProductService (ProductService.java:9) - findProduct
+2021-11-18 15:39:43,448 WARN  [main] org.kosta.model.service.ProductService (ProductService.java:12) - register
+2021-11-18 15:41:44,324 DEBUG [main] org.kosta.model.service.ProductService (ProductService.java:15) - deleteProduct
+2021-11-18 15:41:44,325 INFO  [main] org.kosta.model.service.ProductService (ProductService.java:9) - findProduct
+2021-11-18 15:41:44,326 WARN  [main] org.kosta.model.service.ProductService (ProductService.java:12) - register

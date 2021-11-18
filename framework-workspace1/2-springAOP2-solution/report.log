@@ -1,0 +1,18 @@
+2021-11-18 16:45:03,284 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:13) - *AOP*
+2021-11-18 16:45:03,291 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:13) - *AOP*
+2021-11-18 16:45:03,293 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:13) - *AOP*
+2021-11-18 16:45:03,294 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:13) - *AOP*
+2021-11-18 16:52:31,085 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명*org.kosta.model.member.MemberServiceImpl findMemberById
+2021-11-18 16:52:31,095 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명*org.kosta.model.member.MemberServiceImpl findMemberListByAddress
+2021-11-18 16:52:31,096 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명*org.kosta.model.product.ProductServiceImpl findProductById
+2021-11-18 16:52:31,097 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명*org.kosta.model.product.ProductServiceImpl findProductListByMaker
+2021-11-18 16:52:58,324 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.member.MemberServiceImpl findMemberById
+2021-11-18 16:52:58,330 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.member.MemberServiceImpl findMemberListByAddress
+2021-11-18 16:52:58,332 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.product.ProductServiceImpl findProductById
+2021-11-18 16:52:58,332 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.product.ProductServiceImpl findProductListByMaker
+2021-11-18 17:02:00,868 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.member.MemberServiceImpl findMemberById
+2021-11-18 17:02:00,876 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.member.MemberServiceImpl findMemberListByAddress
+2021-11-18 17:02:00,877 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.product.ProductServiceImpl findProductById
+2021-11-18 17:02:00,877 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.product.ProductServiceImpl findProductListByMaker
+2021-11-18 17:02:00,878 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.community.NoticeCommunityServiceImpl findNotice
+2021-11-18 17:02:00,879 INFO  [main] org.kosta.aop.common.TimeLoggingService (TimeLoggingService.java:18) - *AOP 적용 클래스명과 메서드명* org.kosta.model.community.NoticeCommunityServiceImpl findNoticeList

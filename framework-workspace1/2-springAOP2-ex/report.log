@@ -1,0 +1,4 @@
+2021-11-18 15:56:30,966 INFO  [main] org.kosta.model.member.MemberServiceImpl (MemberServiceImpl.java:11) - findMemberById
+2021-11-18 15:56:30,973 INFO  [main] org.kosta.model.member.MemberServiceImpl (MemberServiceImpl.java:20) - findMemberListByAddress
+2021-11-18 15:56:30,974 INFO  [main] org.kosta.model.product.ProductServiceImpl (ProductServiceImpl.java:15) - findProductById
+2021-11-18 15:56:30,974 INFO  [main] org.kosta.model.product.ProductServiceImpl (ProductServiceImpl.java:20) - findProductListByMaker
