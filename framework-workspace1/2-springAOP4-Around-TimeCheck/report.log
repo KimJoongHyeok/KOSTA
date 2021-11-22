@@ -1,0 +1,6 @@
+2021-11-22 16:45:10,820 WARN  [main] org.kosta.aop.PerformanceReportService (PerformanceReportService.java:23) - PerformanceReportService getList time : 711
+2021-11-22 16:45:12,839 ERROR [main] org.kosta.aop.PerformanceReportService (PerformanceReportService.java:25) - PerformanceReportService getList time : 1804
+2021-11-22 16:45:13,954 ERROR [main] org.kosta.aop.PerformanceReportService (PerformanceReportService.java:25) - PerformanceReportService getList time : 1114
+2021-11-22 16:55:21,756 WARN  [main] org.kosta.aop.PerformanceReportService (PerformanceReportService.java:25) - org.kosta.model.board.BoardServiceImpl findAllList 702
+2021-11-22 16:55:23,770 ERROR [main] org.kosta.aop.PerformanceReportService (PerformanceReportService.java:29) - org.kosta.model.member.MemberServiceImpl findAllMember 1806
+2021-11-22 16:55:24,880 ERROR [main] org.kosta.aop.PerformanceReportService (PerformanceReportService.java:29) - org.kosta.model.member.MemberServiceImpl register 1109
