@@ -1,0 +1,16 @@
+2021-06-01 12:39:33,877 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.MemberServiceImpl findByName null아이유 
+2021-06-01 12:39:33,884 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.MemberServiceImpl findByAddress null분당 
+2021-06-01 12:39:33,885 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.ProductServiceImpl findById null1 
+2021-06-01 12:39:33,888 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.ProductServiceImpl findByMaker null오뚜기 
+2021-06-01 12:40:17,094 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.MemberServiceImpl findByName 아이유 
+2021-06-01 12:40:17,100 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.MemberServiceImpl findByAddress 분당 
+2021-06-01 12:40:17,101 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.ProductServiceImpl findById 1 
+2021-06-01 12:40:17,101 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.ProductServiceImpl findByMaker 오뚜기 
+2021-11-09 15:23:51,150 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.MemberServiceImpl findByName 아이유 
+2021-11-09 15:23:51,153 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.MemberServiceImpl findByAddress 분당 
+2021-11-09 15:23:51,154 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.ProductServiceImpl findById 1 
+2021-11-09 15:23:51,154 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:29) - org.kosta.model.service.ProductServiceImpl findByMaker 오뚜기 
+2021-11-23 15:59:52,803 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:32) - org.kosta.model.service.MemberServiceImpl findByName 아이유 
+2021-11-23 15:59:52,809 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:32) - org.kosta.model.service.MemberServiceImpl findByAddress 분당 
+2021-11-23 15:59:52,810 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:32) - org.kosta.model.service.ProductServiceImpl findById 1 
+2021-11-23 15:59:52,811 INFO  [main] org.kosta.aop.KeywordLoggingService (KeywordLoggingService.java:32) - org.kosta.model.service.ProductServiceImpl findByMaker 오뚜기 
