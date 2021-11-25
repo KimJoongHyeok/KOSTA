@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Nov 25 17:51:39 KST 2021
+org.eclipse.jst.jee.server\:springmvc01=C\:\\kosta224\\WAS\\spring-tomcat\\webapps\\springmvc01
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\moon9\\.m2\\repository\\org\\springframework\\spring-web\\4.3.14.RELEASE\\spring-web-4.3.14.RELEASE.jar=C\:\\kosta224\\WAS\\spring-tomcat\\webapps\\springmvc01\\WEB-INF\\lib\\spring-web-4.3.14.RELEASE.jar

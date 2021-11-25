@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\kosta224\framework-workspace2\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1012641662.index
+3881514781.index
+769108170.index
+392060437.index
+2197687393.index
+3368620450.index
+4221696417.index
