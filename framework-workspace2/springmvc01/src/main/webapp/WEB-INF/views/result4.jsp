@@ -8,6 +8,6 @@
 	</head>
 	<body bgcolor = "lime"> 
 		<a href = "home.do">Home</a><br><br>
-		 ${param.hobby} 등록완료
+		 등록완료 ${customerDTO }
 	</body>
 </html>

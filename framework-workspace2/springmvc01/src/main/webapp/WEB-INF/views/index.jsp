@@ -55,6 +55,34 @@
 			<button>post방식 요청</button>
 		</form><br><br>
 		
+		<form action="paramTest4.do" method = "post">
+			<input type = "text" name = "id" placeholder="아이디" required="required"><br>
+			<input type = "text" name = "name" placeholder="이름" required="required"><br>
+			<input type = "text" name = "address" placeholder="주소" required="required"><br>
+			<button>등록</button>
+		</form><br><br>
+		
+		<form action="redirectTest.do" method = "post">
+			<input type = "text" name = "id" placeholder="아이디" required="required"><br>
+			<input type = "text" name = "name" placeholder="이름" required="required"><br>
+			<button>redirectTest</button>
+		</form><br><br>
+		
+		<form action="hasA-Test.do" method = "post">
+			<input type = "text" name = "id" placeholder="아이디" required="required"><br>
+			<input type = "text" name = "name" placeholder="이름" required="required"><br>
+			<!-- has a 관계 : 인스턴스변수명.인스턴스변수명 -->
+			<input type = "text" name = "carDTO.model" placeholder="차 모델" required="required"><br>
+			<input type = "number" name = "carDTO.price" placeholder="차 가격" required="required"><br>
+			<button>HasA-Test</button>
+		</form><br><br>
+		
+		<form action = "login.do" method = "post">
+			<input type = "text" name = "id" placeholder="id" required="required"><br>
+			<input type = "password" name = "password" placeholder="password" required="required"><br>
+			<button>로그인</button>
+		</form>
+		
 		<img src = "springmvc.jpg">
 	</body>
 </html>
