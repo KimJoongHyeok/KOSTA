@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>SpringBoot Thymeleaf Ajax 연동</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+		<div class="container pt-3">
+			<div class="row">
+				<div class="col-sm-4 offset-sm-4">
+				<h6>SpringBoot Thymeleaf Ajax 연동</h6><br>
+					<select id="deptNo" th:name="dept">
+						<option value="0">-부서-</option>						
+						<option th:each="dept : ${deptList}" th:value="${dept.deptNo}" th:text="${dept.dname}"></option>
+					
+					</select> 
+					<input type="text" placeholder="사원명" id="empName">
+					<button type="button" id="searchEmpDeptListBtn">검색</button>
+				</div>
+			</div>
+			<div class="row pt-4">
+				<div class="col-sm-4 offset-sm-4">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>사원번호</th>
+								<th>사원명</th>
+								<th>부서명</th>
+								<th>근무지</th>
+							</tr>
+						</thead>
+						<tbody id="empListTbody">
+						<tr th:each="emp:${empList}">
+				        <td th:text="${emp.empNo}"></td>
+				        <td th:text="${emp.ename}"></td>
+				        <td th:text="${emp.departmentDTO.dname}"></td>
+				        <td th:text="${emp.departmentDTO.loc}"></td>				            
+				        </tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	
+	<script type="text/javascript">
+		$(function() {
+			$("#searchEmpDeptListBtn").click(
+					function() {
+						$("#empList").empty();
+						let deptNo = $("#deptNo").val();
+						let ename = $("#empName").val();
+						$.ajax({
+							type : "get",
+							url : "findEmployeeListDynamicSQL",
+						/* 	dataType : "json", */ //json이 아니라 문자열 html로 응답받기 때문에 json을 명시하지 않는다 
+							data : "departmentDTO.deptNo=" + deptNo + "&ename="+ ename,
+							success : function(result) {
+								//empListTbody를 컨트롤러에서 받은 html 정보로 교체한다
+								$("#empListTbody").replaceWith(result);
+							}//success callback
+						});//ajax
+					});//click
+		});//ready
+	</script>
+</body>
+</html>

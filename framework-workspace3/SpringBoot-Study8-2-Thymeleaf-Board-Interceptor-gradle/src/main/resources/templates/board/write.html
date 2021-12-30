@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout}">
+<head>
+<title>write</title>
+</head>
+<div layout:fragment="main">
+	<form action="write" method="post" id="write_form">
+		<table class="table">
+			<tr>
+				<td><input type="text" name="title" class="form-control" 
+					placeholder="제목" required="required">
+				</td>
+			</tr>
+			<tr>
+				<td><textarea class="form-control" rows="15" name="content"
+						required="required" placeholder="본문내용"></textarea></td>
+			</tr>
+		</table>
+		<div class="btnArea">
+			<button type="submit" class="btn btn-primary">확인</button>		
+			<button type="reset" class="btn btn-primary">취소</button>
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//form id로 제어한다 
+			$("#write_form").submit(function() {
+				return confirm("글 등록하시겠습니까?");
+			});
+		});
+	</script>
+</div>
+</html>

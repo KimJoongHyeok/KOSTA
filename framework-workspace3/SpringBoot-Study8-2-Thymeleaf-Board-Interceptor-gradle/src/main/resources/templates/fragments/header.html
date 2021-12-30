@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="headerFragment">
+<th:block th:if=${session.mvo==null}>
+<form method="post" action="login">
+		<input type="text" name="id" size="7" placeholder="아이디"> 
+		<input type="password" name="password" size="7" placeholder="비밀번호"> 
+		<input type="submit" value="로그인">
+</form>
+</th:block>
+<th:block th:unless="${session.mvo==null}">
+	<a href="list">홈</a> &nbsp;&nbsp;
+	<a href="writeForm"> 글쓰기</a>&nbsp;&nbsp; 
+	<span th:text="${session.mvo.name}"></span>님 &nbsp;&nbsp; <a href="#" id="logout">로그아웃</a>
+	 <script type="text/javascript">
+	    $(document).ready(function(){
+	    	$("#logout").click(function(){
+	    		if(confirm("로그아웃하시겠습니까?"))
+	    			location.href="logout";
+	    	});
+	    });	
+	</script>
+</th:block>	 
+</header>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--/* 
+			template engine : Thymeleaf 선언부 
+ */-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf</title>
+</head>
+<body>
+	<h3>Template Engine : Thymeleaf study</h3>
+	<br>
+	<br>
+	<!-- html 주석  -->
+	<!--/* thymeleaf 주석     */-->
+	<!-- 
+			선언부에서 설정하여 th 로 시작
+			th:href="@{/url}" 을 명시하면 웹컨텍스트명을 자동으로 적용해줌 
+			jsp 에서는 ${pageContext.request.contextPath}/study1 으로 명시했음 
+			컨텍스트명 다음으로 study1 경로를 찾게 된다 
+	 -->
+	<a href="study1" th:href="@{/study1}">thymeleaf link study1</a><br>
+	<!--  html link는 컨텍스트명이 없으므로 현재 디렉토리를 기준으로 study1을 찾으므로 404가 발생  -->
+	<a href="study1" >html link study1</a><br><br>
+	<hr>
+	<a href="home" th:href="@{/}">thymeleaf link Home</a><br>
+</body>
+</html>

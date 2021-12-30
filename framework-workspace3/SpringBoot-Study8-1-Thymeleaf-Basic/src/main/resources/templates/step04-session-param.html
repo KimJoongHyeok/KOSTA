@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>session ,query string,wp param</title>
+</head>
+<body>
+<!--/* 
+		session 객체의 정보를 확인 
+ */-->
+<span th:text="${session.member.name}">아이유</span>
+<span th:text="${session.member.address}">종로</span>
+<br><br>
+<!--  query string 연습  -->
+<a href="/study4?id=java&name=아이유" th:href="@{/study4(id=${session.member.id}, name=${session.member.name})}">param test</a>
+<br><br>
+<!--  parameter 확인  -->
+<span th:text="${param.id}">java</span>
+<span th:text="${param.name}">아이유</span>
+</body>
+</html>
+
+
+

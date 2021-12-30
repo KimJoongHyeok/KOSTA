@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>step2 object expression</title>
+</head>
+<body>
+<a href="home" th:href="@{/}">Home</a><br>
+<hr>
+<form method="post" action="/signup">
+    <label>name</label>
+    <input type="text" th:value="${member.name}" name="name">    
+    <label>address</label>
+    <input type="text" th:value="${member.address}" name="address">
+</form>
+
+<hr>
+<!--/* 
+        위 방식을 아래와 같이 th:object="" 를 이용해 사용할 수도 있다 
+        
+		*{name} 은 th:object 의 회원객체를 사용( # 은 안됨 )
+ */-->
+<form th:object="${member}" method="post" action="/signup">
+    <label>name</label>
+    <input type="text" th:value="*{name}" name="name">    
+    <label>address</label>
+    <input type="text" th:value="*{address}" name="address">
+</form>
+<hr>
+<!--/* 
+		아래와 같이 혼용 가능 
+ */-->
+<form th:object="${member}" method="post" action="/signup">
+    <label>name</label>
+    <input type="text" th:value="*{name}" name="name">    
+    <label>address</label>
+    <input type="text" th:value="*{address}" name="address">
+    <label>id</label>
+    <input type="text" th:value="${member.id}" name="id">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

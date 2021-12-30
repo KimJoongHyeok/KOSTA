@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title> thymeleaf each start end</title>
+</head>
+<body>
+	<th:block th:each="pageNo : ${#numbers.sequence(1,10)}">	
+		<span th:text="${pageNo}"></span>
+	</th:block>
+	<br><br>
+	<th:block th:each="pageNo : ${#numbers.sequence(startPageNumber,endPageNumber)}">	
+		<span th:text="${pageNo}"></span>
+	</th:block>
+</body>
+</html>

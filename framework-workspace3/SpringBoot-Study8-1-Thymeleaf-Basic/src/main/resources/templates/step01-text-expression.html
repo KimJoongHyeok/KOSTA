@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>step1 text-expression</title>
+</head>
+<body>
+
+<a href="home" th:href="@{/}">Home</a><br>
+<hr>
+  <span th:text="${memberDTO.name}">회원명</span>
+  <span th:text="*{memberDTO.name}">회원명</span>
+  <!-- $ 와 * 는 동일  -->
+  <hr>
+  <!--/* 
+  	 thymeleaf	주석
+  	 
+  	 두 표현은 모두 DTO 의 get Method에 접근함
+  	  	    
+    */-->
+   <span th:text="${memberDTO. address} ">회원주소</span>   
+   <span th:text="${memberDTO.getAddress()}">회원주소</span>
+   <span th:text="${memberDTO.register}">테스트1</span>
+   <span th:text="${memberDTO.exist}">테스트2</span>
+</body>
+</html>
+
+
+

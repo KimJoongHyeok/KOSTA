@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>step03-result1-parm</title>
+</head>
+<body>
+<a href="home" th:href="@{/}">Home</a><br><br>
+<span th:text="${param.pageNo}">1</span>
+<span th:text="${param.keyword}">java</span>
+<br><br>
+<!--// 아래와 같이 사용가능 //-->
+[[${param.pageNo}]] [[${param.keyword}]] 
+</body>
+</html>

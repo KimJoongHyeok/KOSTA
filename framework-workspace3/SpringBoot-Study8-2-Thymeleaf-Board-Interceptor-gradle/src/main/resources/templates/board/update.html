@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout}">
+<head>
+<title>write</title>
+</head>
+<div layout:fragment="main">
+	<form method="post" id="updateForm" th:action="updatePost" th:object=${post}>
+		<input type="hidden" name="no" th:value="*{no}">
+		<table class="table">
+			<tr>
+				<td><input type="text" name="title" th:value="*{title}" required="required" class="form-control"></td>
+			</tr>
+			<tr>
+				<td><textarea class="form-control" rows="15" name="content"
+						required="required" th:text="*{content}"></textarea>
+				</td>
+			</tr>
+		</table>
+		<div class="btnArea">
+			<button type="submit" class="btn btn-primary">수정</button>
+			<button type="reset" class="btn btn-primary">취소</button>
+		</div>
+	</form>
+</div>
+</html>

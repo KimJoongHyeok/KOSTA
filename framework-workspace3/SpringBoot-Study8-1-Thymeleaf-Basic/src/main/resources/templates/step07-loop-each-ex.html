@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <title>thymeleaf loop each</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h2>SpringBoot Thymeleaf loop</h2>     
+  <!--/* 
+	th:block 태그의 th:if 조건에 만족하는 경우에만 th:block 태그와 하위의 태그가 실행 
+ */-->
+ <th:block th:if="${session.memberDTO!=null}">
+  <p th:text="'총상품수  '+${#lists.size(productList)}">상품수 2</p>     
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+      <th>NO</th>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>MAKER</th>
+        <th>PRICE</th>
+        <th>Gift</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="product,p:${productList}">
+        <td th:text="${p.index}">0</td>
+        <td th:text="${product.productId}">1</td>
+        <td th:text="${product.name}">새우깡</td>
+        <td th:text="${product.maker}">농심</td>       
+        <td th:text="${product.price}">1000</td>       
+        <td th:text="${product.gift}?'사은품있음^^':'사은품없음TT'">사은품있음</td>       
+      </tr>
+     </tbody>
+  </table>
+   </th:block> 
+</div>
+
+</body>
+</html>

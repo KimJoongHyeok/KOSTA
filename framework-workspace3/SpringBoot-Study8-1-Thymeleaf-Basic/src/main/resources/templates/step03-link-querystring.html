@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf Link URL query string</title>
+</head>
+<body>
+<a href="home" th:href="@{/}">Home</a><br><br>
+<!--/*   
+		                      경로			query string 부분 
+		Link URL href="@{/board/list(pageNo=${pageNo},keyword=${keyword})}"
+ */-->
+
+<!--
+	브라우저 소스 상에서 나오는 &amp; 의 의미는 
+	앰퍼샌드(Ampersand) 라 불리며 & 문자를 뜻함, & 문자를 화면에 출력하고 싶으면 &amp; 를 사용한다 
+	board/list?pageNo=7&keyword=spring	
+  -->
+<a href="/board/list.html" th:href="@{/board/list(pageNo=${pageNo},keyword=${keyword})}">Search</a>
+<br><br>
+<!-- order/details?orderId=3&maker=LG -->
+<a href="details.html" th:href="@{/order/details(orderId=${orderId},maker=${maker})}">view</a>
+
+</body>
+</html>

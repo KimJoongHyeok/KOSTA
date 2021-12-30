@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>javascript , jquery 상에서 thymeleaf 표현식</title>
+</head>  
+<body>
+<!--/* 
+		1. 타임리프 변수를 자바스크립트에서 사용하기 위한 선언 
+         <script th:inline="javascript"> </script>
+         
+         2. 스크립트 시작과 끝에 CDATA 반드시 선언 	
+        CDATA Section :   Character DATA 영역 
+          이 영역에는태그가 없으며  문자열 자체로 인식하라고   parser에게 알리는 역할
+          
+		/*<![CDATA[*/ 
+		
+		/*]]*/
+		
+		3. ${}를 주석으로 감싸기
+         자바스크립트에서 Thymeleaf 변수 사용시 
+         
+         주석을 명시하는 이유는  [[${   }]] 만 쓰면 자바스크립트 문법이 위배되기 때문에 
+         아래와 같이 쓰고 옆에 명시한 null은 브라우저 상에서만 실행했을 때 할당될 값을 명시
+          /*[[${   }]]*/ null; // 이렇게 쓰면 에러 안남 
+          첫번째는 컨트롤러에서 공유한 정보 두번째 null 은 서버없이 브라우저상에서만 실행했을 때
+          할당될 값을 명시 
+ */-->
+
+<script  th:inline="javascript">
+	/*<![CDATA[*/      	
+	let result =/*[[ ${checkIdResult}]]*/ null;  
+	alert(result);   
+	location.href="study9-2?result="+result;
+	//아래와 같이 표현해도 됨 
+	//location.href="study9-2?result="+/*[[ ${checkIdResult}]]*/ null;
+	/*]]*/        	  
+</script>     
+</body>  
+</html>  

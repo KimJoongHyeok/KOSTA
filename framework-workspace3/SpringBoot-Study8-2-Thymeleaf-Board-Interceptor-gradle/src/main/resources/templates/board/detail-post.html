@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layouts/layout}" 
+>
+<head>
+<title>list</title>
+</head>
+<div layout:fragment="main">
+<!--/* 
+         th:object="" 를 이용해본다    
+		*{ } 은 th:object 의 post 객체의 속성을 출력 
+ */-->
+<table  class="table" th:object=${post}>
+	<tr >
+			<td th:text="'글번호 '+*{no}"></td>
+			<td th:text="'제목 '+*{title}"></td>
+			<td th:text="'작성자 '+*{memberVO.name}"></td>
+			<td th:text="'조회수 '+*{hits}"></td>
+			<td th:text="*{timePosted}"></td>
+		</tr>		
+		<tr>
+			<td colspan="5" class="content">
+			<pre th:text="*{content}"></pre>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5" class="btnArea">			 
+			 <th:block th:if=${session.mvo.id==post.memberVO.id}>
+			  <button form="deleteForm" class="btn-primary" type="submit" >삭제</button>
+			 <button form="updateForm" class="btn-primary" type="submit">수정</button>
+			 <form action="deletePost" id="deleteForm" method="post">
+			 <input type="hidden" name="no" th:value="*{no}">			
+			 </form>
+			 <form action="updateView" id="updateForm" method="post">
+			 <input type="hidden" name="no" th:value="*{no}">			
+			 </form>		
+			  <script type="text/javascript">
+			    $(document).ready(function(){
+			    	$("#deleteForm").submit(function(){
+			    		return confirm("삭제하시겠습니까?");
+			    	});
+			    	$("#updateForm").submit(function(){
+			    		return confirm("수정하시겠습니까?");
+			    	});
+			    });	
+			</script>
+			</th:block>			
+			 </td>
+		</tr>
+	</table>
+</div>
+</html>

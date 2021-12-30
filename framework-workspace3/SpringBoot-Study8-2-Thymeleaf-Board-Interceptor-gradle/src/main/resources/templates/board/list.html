@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout}">
+<head>
+<title>list</title>
+</head>
+<div layout:fragment="main">
+	<table class="table table-bordered  table-hover boardlist">
+		<thead>
+			<tr class="bg-info text-light">
+				<th class="no">NO</th>
+				<th class="title">제목</th>
+				<th class="name">이름</th>
+				<th class="date">작성일</th>
+				<th class="hit">HIT</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="pvo:${lvo.list}">
+				<td th:text="${pvo.no }"></td>
+				<td><th:block th:if="${session.mvo==null}">
+						<span th:text="${pvo.title}"></span>
+					</th:block> <th:block th:unless="${session.mvo==null}">
+						<a th:href="@{detailPost(no=${pvo.no})}" th:text="${pvo.title }">
+						</a>
+					</th:block></td>
+				<td th:text="${pvo.memberVO.name}"></td>
+				<td th:text="${pvo.timePosted}"></td>
+				<td th:text="${pvo.hits}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br></br>
+	<ul class="pagination justify-content-center" style="margin: 20px 0"
+		th:object="${lvo.pagingBean}">
+		<!--/*  
+			th object의 속성을 이용	*{}
+		*/-->
+		<th:block th:if="*{previousPageGroup}">
+			<li class="page-item"><a class="page-link"
+				th:href="@{/list(pageNo=*{startPageOfPageGroup-1})}">Previous</a></li>
+		</th:block>
+		<!--/* 	*/-->
+		<th:block
+			th:each="pageNo : *{#numbers.sequence(startPageOfPageGroup,endPageOfPageGroup)}">
+			<!--/* 
+					th each 구문에 의해 생성되는 pageNo 와 pagingBean의 nowPage가 일치하면 즉 현재페이지이면 
+					class page-item 에 추가해서 active class 속성을 추가하도록 한다 
+			 */-->
+			<li class="page-item" th:classappend="${pageNo}==*{nowPage}?'active'">
+				<a class="page-link" th:href="@{list(pageNo=${pageNo})}"
+				th:text="${pageNo}"></a>
+			</li>			
+		</th:block>
+
+		<th:block th:if="*{nextPageGroup}">
+			<li class="page-item"><a class="page-link"
+				th:href="@{list(pageNo=*{endPageOfPageGroup+1})}">Next</a></li>
+		</th:block>
+
+
+	</ul>
+
+</div>
+</html>

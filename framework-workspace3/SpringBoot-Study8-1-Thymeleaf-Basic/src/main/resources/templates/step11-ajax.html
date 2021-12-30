@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>SpringBoot Thymeleaf Ajax 연동</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container pt-3">
+			<div class="row">
+				<div class="col-sm-4 offset-sm-4">
+				<h6>SpringBoot Thymeleaf Ajax 연동</h6><br>
+					<button type="button" id="getTotalEmployeeCountBtn1">총사원수 보기1</button>
+					<!-- 일반적인 방식으로 처리 -->
+					<span id="empCountView1" ></span>
+					<br>
+					<button type="button" id="getTotalEmployeeCountBtn2">총사원수 보기2</button>
+					<!--  thymeleaf 방식으로 처리  -->
+					<span id="empCountView2" th:text="${empCount}"></span>
+				</div>
+			</div>			
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$("#getTotalEmployeeCountBtn1").click(
+					function() {									
+						$.ajax({
+							type : "get",
+							url : "getTotalEmployeeCount1",					
+							success : function(result) {
+								$("#empCountView1").html(result);
+							}//success callback
+						});//ajax
+				});//click
+				$("#getTotalEmployeeCountBtn2").click(
+						function() {									
+							$.ajax({
+								type : "get",
+								url : "getTotalEmployeeCount2",					
+								success : function(result) {
+									//empCountView를 컨트롤러에서 받은 html 정보로 교체한다
+									$("#empCountView2").replaceWith(result).append("명");
+								}//success callback
+							});//ajax
+					});//click
+		});//ready
+	</script>
+</body>
+</html>

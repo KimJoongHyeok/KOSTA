@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--/* 
+			template engine : Thymeleaf 선언부 
+ */-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf Study</title>
+</head>
+<body>
+	<h3>Template Engine : Thymeleaf study</h3>
+	<br>
+	<br>
+	<!-- html 주석  -->
+	<!--/* thymeleaf 주석     */-->
+	<!--/* 
+			선언부에서 설정하여 th 로 시작
+			th:href="@{/url}" 을 명시하면 웹컨텍스트명을 자동으로 적용해줌 
+			jsp 에서는 ${pageContext.request.contextPath}/study1 으로 명시했음 
+	 */-->
+	 <!--  이미지(js, css)는 static 아래에 배치하고 기본으로 인식된다
+	   context path 를 적용했을 때는 아래 경로는 포트 다음으로 이미지를 찾기 때문에 이미지가 제공되지 않는다 
+ -->
+<!-- 	<img src="/images/thymeleaf.png">	 -->
+	 <br><br>
+	 <!--  아래와 같이 작성하면 동적으로 프로젝트명(context path)를 삽입해준다
+	 		 HomeController의 home메서드에서 imageName 정보를 할당해준 상태 
+	  -->
+	<img th:src="@{/images/}+${imageName}"/>
+	<br><br>
+	<!--  여기까지 테스트 했으면 application.properties 의 context-path를 명시한 첫번째 라인에 주석을 준다  -->
+	 
+	 
+	<a href="" th:href="@{/study1}">study1 text expression</a><br><br>
+	<a href="" th:href="@{/study2}">study2 object expression</a><br><br>
+	<a href="" th:href="@{/study3}">study3 link querystring</a><br><br>
+	<a href="" th:href="@{/study4}">study4 session param</a><br><br>
+	<a href="" th:href="@{/study5}">study5 if-unless-switch</a><br><br>
+	<a href="" th:href="@{/study6}">study6 loop-each</a><br><br>
+	<a href="" th:href="@{/study7}">study7 loop-each-ex</a><br><br>
+	<a href="" th:href="@{/study8}">study8 loop-each-start-end</a><br><br>
+	<a href="" th:href="@{/study9}">study9 javascript</a><br><br>
+	<a href="" th:href="@{/study10}">study10 thymeleaf-layout-dialect</a><br><br>
+	<a href="" th:href="@{/study11}">study11 thymeleaf ajax</a><br><br>
+	<a href="" th:href="@{/employeeAjaxTestView}">study12 thymeleaf ajax</a><br><br>
+
+</body>
+</html>
+
+
+
+
+
+
+

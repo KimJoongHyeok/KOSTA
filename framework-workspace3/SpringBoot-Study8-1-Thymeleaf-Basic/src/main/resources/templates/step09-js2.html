@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>javascript , jquery 상에서 thymeleaf 표현식</title>
+</head>
+<body> 
+<!--/* 
+		1. 타임리프 변수를 자바스크립트에서 사용하기 위한 선언 
+         <script th:inline="javascript"> </script>
+         
+         2. 스크립트 시작과 끝에 CDATA 반드시 선언 	
+        CDATA Section :   Character DATA 영역 
+          이 영역에는태그가 없으며  문자열 자체로 인식하라고   parser에게 알리는 역할
+          
+		/*<![CDATA[*/ 
+		
+		/*]]*/
+		
+		3. ${}를 주석으로 감싸기
+         자바스크립트에서 Thymeleaf 변수 사용시 
+          /*[[ ${} ]]*/
+ */-->
+  
+<script  th:inline="javascript">
+	/*<![CDATA[*/	
+	alert(/*[[ ${message} ]]*/ null);  
+	/*]]*/     
+</script>      
+step9-2    <span th:text="${param.result}">회원주소</span>
+</body>  
+</html>

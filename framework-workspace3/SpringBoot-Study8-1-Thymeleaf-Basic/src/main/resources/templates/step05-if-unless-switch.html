@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>조건문</title>
+</head>
+<body>
+<!-- 
+		if , unless -> if else라고 보면 됨  
+		
+ -->
+ <span th:if="${product.price}<2000" th:text="${product.name}"> </span> 
+ <span th:unless="${product.price}<2000">비싼 맥주 </span>
+ <hr>
+   <!--/* 
+	th:block 태그의 th:if 조건에 만족하는 경우에만 th:block 태그와 하위의 태그가 실행 
+ */-->
+ <th:block th:if="${product.maker=='하이트진로'}">
+ 	<div style="background-color: yellow" th:text="${product.name}+' '+${product.maker} "></div>
+ </th:block>
+  <th:block th:unless="${product.maker=='하이트진로'}">
+ 	<div style="background-color: lime" th:text="${product.name}+' '+${product.maker} "></div>
+ </th:block>
+ <hr>
+ <!--/*    
+ 		if unless 를 삼항연산자로 변경해본다 
+ 		삼항연산자
+		Conditional operators:
+		If-then: (if) ? (then)
+		If-then-else: (if) ? (then) : (else) 
+  */-->
+   <span  th:text="${product.price}<2000 ? ${product.name}: 비싼맥주"> </span><hr>
+   <span  th:text="${product.price}<1000 ? ${product.name}: 싼맥주"> </span><hr>
+   <span  th:text="${product.price}<1500 ? ${product.name}"> </span><hr>
+   <span  th:text="${product.gift} ? ${product.name} +' 사은품 증정'"> </span><hr>
+   <span  th:text="${product.maker}=='하이트진로' ? ${product.name} +' '+ ${product.maker}"> </span><hr>
+   <hr>
+   Thymeleaf Switch절
+<th:block th:switch="${size}">
+	<th:block th:case="L">
+    	<span>대</span>
+    </th:block>
+    <th:block th:case="M">
+    	<span>중</span>
+    </th:block>
+    <th:block th:case="S">
+    	<span>소</span>
+    </th:block>    
+    <th:block th:case="*">
+    	<span>Default</span>
+    </th:block>    
+</th:block>
+</body>
+</html>
+
+
+
+
+
+
