@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: ERROR
+server:
+  port: 7777
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
