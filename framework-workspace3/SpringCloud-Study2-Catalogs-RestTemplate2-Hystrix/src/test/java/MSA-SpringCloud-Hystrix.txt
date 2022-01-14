@@ -1,0 +1,26 @@
+MSA 를 위한 Spring Cloud 컴포넌트 활용 
+
+- Circuit Breaker – Hystrix
+Hystrix 는 분산환경을 위한 서비스 장애 내성 갖도록 도와주는 라이브러리로써,
+ MSA 애플리케이션의 장애 전파를 방지할 수 있음
+ Hystrix 와 같은 Circuit Breaker 서비스는 기존의 모놀리틱 아키텍처에서는 고려하지 않았던 모듈간 또는 메서드간의 호출 실패가
+MSA 에서는 발생할 수 있음.
+각각의 서비스들이 독립적이지만, 장애가 전파될 수 있는 성질이 있어 이를 미연에 방지하기 위한 Circuit Breaker 가 필수적임.
+
+환경설정 
+
+maven pom.xml 
+<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.6.RELEASE</version>
+		<relativePath />
+</parent>
+
+spring boot 2.2.6 환경에서 spring cloud 라이브러리 추가 
+
+<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<version>2.2.5.RELEASE</version>
+</dependency>
